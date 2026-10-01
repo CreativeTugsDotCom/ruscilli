@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruscilli Construction Co. | Building What's Next Since 1945</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f2b48',
+                            900: '#0a1d31',
+                            950: '#061322',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        },
+                        architectural: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .blueprint-bg {
+            background-image: linear-gradient(rgba(15, 43, 72, 0.94), rgba(6, 19, 34, 0.97)),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        .blueprint-grid-light {
+            background-image: linear-gradient(90deg, rgba(15, 43, 72, 0.04) 1px, transparent 1px),
+                              linear-gradient(rgba(15, 43, 72, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .glass-card-dark {
+            background: rgba(15, 43, 72, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Sticky Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-navy-950/90 backdrop-blur-md border-b border-white/10 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-amber-500 rounded-md flex items-center justify-center font-black text-navy-950 text-xl tracking-tighter shadow-lg shadow-amber-500/20 group-hover:bg-amber-400 transition">
+                        R
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl tracking-wider text-white uppercase leading-none font-heading">
+                            RUSCILLI
+                        </span>
+                        <span class="text-[10px] tracking-[0.25em] text-amber-400 font-semibold uppercase mt-1">
+                            Construction Co. • Est. 1945
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 font-medium text-sm tracking-wide">
+                    <a href="#about" class="text-slate-200 hover:text-amber-400 transition">About Us</a>
+                    <a href="#services" class="text-slate-200 hover:text-amber-400 transition">Services</a>
+                    <a href="#portfolio" class="text-slate-200 hover:text-amber-400 transition">Portfolio</a>
+                    <a href="#markets" class="text-slate-200 hover:text-amber-400 transition">Markets</a>
+                    <a href="#why-ruscilli" class="text-slate-200 hover:text-amber-400 transition">Why Ruscilli</a>
+                    <a href="#contact" class="text-slate-200 hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#proposal-builder" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-md transition shadow-md shadow-amber-500/10 flex items-center gap-2">
+                        <span>Request a Proposal</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 focus:outline-none" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">About Us</a>
+            <a href="#services" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">Services</a>
+            <a href="#portfolio" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">Portfolio</a>
+            <a href="#markets" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">Markets</a>
+            <a href="#why-ruscilli" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">Why Ruscilli</a>
+            <a href="#contact" class="block text-slate-200 hover:text-amber-400 py-2 border-b border-white/5">Contact</a>
+            <a href="#proposal-builder" class="block bg-amber-500 text-navy-950 text-center font-bold py-3 rounded-md uppercase tracking-wider text-sm mt-4">
+                Request a Proposal
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 blueprint-bg text-white overflow-hidden">
+        <!-- Hero Background Visual -->
+        <div class="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Architectural Modern Construction Site" 
+                 class="w-full h-full object-cover object-center"
+                 onerror="this.src='https://placehold.co/1920x1080/0f2b48/ffffff?text=Ruscilli+Construction'">
+        </div>
+
+        <!-- Animated Architectural Lines Accent -->
+        <div class="absolute top-1/4 right-10 w-96 h-96 border border-amber-500/20 rounded-full animate-spin-slow pointer-events-none hidden xl:block"></div>
+        <div class="absolute bottom-10 right-1/3 w-64 h-64 border border-white/10 pointer-events-none hidden lg:block"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-8 space-y-6">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-amber-400 text-xs font-semibold uppercase tracking-widest">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        80 Years of Commercial Building Excellence
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-heading leading-none">
+                        Building <span class="text-gradient-gold">What’s Next.</span>
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+                        Construction expertise, thoughtful collaboration, and lasting value — delivered with uncompromising integrity from initial planning to project completion.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#proposal-builder" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-8 py-4 rounded-md uppercase tracking-wider text-sm transition text-center shadow-lg shadow-amber-500/20 flex items-center justify-center gap-3">
+                            <span>Request a Proposal</span>
+                            <i class="fa-solid fa-calculator"></i>
+                        </a>
+                        <a href="#portfolio" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-4 rounded-md tracking-wider text-sm transition text-center backdrop-blur-sm flex items-center justify-center gap-2">
+                            <span>Explore Our Work</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Quick Visual Card -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="glass-card-dark p-6 rounded-xl border border-white/10 shadow-2xl relative">
+                        <div class="relative h-64 rounded-lg overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" 
+                                 alt="High-Rise Modern Architecture" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/0a1d31/ffffff?text=Commercial+Project'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Featured Milestone</span>
+                                <p class="text-white font-bold text-sm">State-of-the-Art Medical Research Tower</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 text-center">
+                            <div class="bg-navy-950/60 p-3 rounded-lg border border-white/5">
+                                <div class="text-xl font-bold text-amber-400 font-heading">100%</div>
+                                <div class="text-[11px] text-slate-300">Employee-Owned</div>
+                            </div>
+                            <div class="bg-navy-950/60 p-3 rounded-lg border border-white/5">
+                                <div class="text-xl font-bold text-white font-heading">Safety</div>
+                                <div class="text-[11px] text-slate-300">Zero Incident Mindset</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Statistics Bar -->
+    <section class="bg-navy-900 border-t border-b border-white/10 py-10 text-white relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="p-4">
+                    <div class="text-4xl sm:text-5xl font-black text-amber-400 font-heading counter" data-target="80">0</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider mt-2">Years of Experience (Since 1945)</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl sm:text-5xl font-black text-white font-heading counter" data-target="100">0</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider mt-2">% Employee-Owned (ESOP)</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl sm:text-5xl font-black text-amber-400 font-heading counter" data-target="85">0</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider mt-2">% Repeat Client Rate</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl sm:text-5xl font-black text-white font-heading">$<span class="counter" data-target="2.5">0</span>B+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider mt-2">Completed Construction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Legacy Section -->
+    <section id="about" class="py-24 bg-white blueprint-grid-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Image & Legacy Badge -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Ruscilli Construction Onsite Management" 
+                             class="w-full h-[480px] object-cover"
+                             onerror="this.src='https://placehold.co/800x600/0f2b48/ffffff?text=Legacy+of+Quality'">
+                    </div>
+                    
+                    <!-- Decorative Floating Card -->
+                    <div class="absolute -bottom-6 -right-6 z-20 bg-navy-800 text-white p-6 rounded-xl shadow-xl max-w-xs border border-amber-500/30 hidden sm:block">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fa-solid fa-users-gear text-amber-400 text-2xl"></i>
+                            <span class="font-extrabold text-lg font-heading">Family & Employee Owned</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Every team member has a direct stake in the perfection, safety, and long-term performance of your project.
+                        </p>
+                    </div>
+
+                    <!-- Subtle Backdrop Pattern -->
+                    <div class="absolute -top-6 -left-6 w-full h-full border-2 border-amber-500/20 rounded-2xl -z-0"></div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-block text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded border border-amber-200">
+                        Our Story & Legacy
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 font-heading leading-tight">
+                        Built on Trust, Precision, and Over Eight Decades of Vision.
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed font-normal">
+                        Founded in 1945, Ruscilli Construction Co. has grown from a foundational regional contractor into one of the Midwest’s premier full-service construction firms. As a family and employee-owned company, our success is measured by the enduring relationships we build and the community landmarks we create.
+                    </p>
+
+                    <!-- Key Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-shield-halved text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Uncompromising Safety</h4>
+                                <p class="text-xs text-slate-500 mt-1">Zero-incident culture protecting our workers & partners.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-diagram-project text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">VDC & BIM Technology</h4>
+                                <p class="text-xs text-slate-500 mt-1">Cutting-edge 3D modeling for cost & clash elimination.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-handshake text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Transparent Pricing</h4>
+                                <p class="text-xs text-slate-500 mt-1">Predictable budgets and rigorous value engineering.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-award text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Master Craftsmanship</h4>
+                                <p class="text-xs text-slate-500 mt-1">Self-perform trade capabilities ensuring schedule control.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex items-center gap-6">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 border-2 border-white flex items-center justify-center text-white text-xs font-bold">RC</div>
+                            <div class="w-10 h-10 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center text-navy-950 text-xs font-bold">1945</div>
+                            <div class="w-10 h-10 rounded-full bg-slate-700 border-2 border-white flex items-center justify-center text-white text-xs font-bold">ESOP</div>
+                        </div>
+                        <div class="text-xs text-slate-500">
+                            <strong class="text-navy-800 block text-sm">Complete Project Delivery</strong>
+                            Planning, Precon, Construction, & Closeout
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100/80 px-3 py-1 rounded">Comprehensive Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 font-heading mt-3">
+                    Full-Service Construction Capability
+                </h2>
+                <p class="text-slate-600 mt-3 text-base">
+                    From initial concept feasibility to white-glove turnover, we tailor our delivery methods to meet your schedule, budget, and operational needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Preconstruction -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Preconstruction Blueprint Planning" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=Preconstruction'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-drafting-compass"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">Preconstruction</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Accurate cost estimating, constructability analysis, site evaluations, BIM modeling, and value engineering before breaking ground.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('Preconstruction', 'Our preconstruction services ensure total clarity prior to site mobilization. We leverage historical database pricing, real-time material tracking, and clash-detection technology to eliminate costly surprises.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Construction Management -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Active Construction Site Management" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=Construction+Management'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-bars-staggered"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">Construction Management</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Collaborative CM at-Risk and Agent CM services providing transparent budget control, schedule discipline, and safety supervision.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('Construction Management', 'Acting as your trusted advisor, Ruscilli manages trades, schedule milestones, quality assurances, and site logistics to deliver superior value.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: General Contracting -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" 
+                                 alt="General Contracting Onsite Team" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=General+Contracting'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">General Contracting</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Traditional single-point responsibility delivering guaranteed maximum pricing, direct trade management, and quality control.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('General Contracting', 'With robust direct subcontractor relationships built over 80 years, our General Contracting teams guarantee execution to exact specs.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Design-Build -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Design-Build Architectural Engineering" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=Design-Build'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">Design-Build</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Single-source accountability unifying design and construction teams for faster project execution and reduced risk.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('Design-Build', 'Design-Build streamlines communication between architectural creators and builders, condensing schedules and offering rapid budget validation.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Special Projects -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Special Projects & Interior Fit-outs" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=Special+Projects'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">Special Projects Division</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Agile teams dedicated to interior renovations, tenant fit-outs, building additions, and fast-track structural updates.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('Special Projects', 'Designed for speed and minimal disruption to ongoing client operations, our Special Projects team handles work ranging from $50K to multi-millions.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Self-Perform -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Self-Perform Trade Craftsmen" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f2b48/ffffff?text=Self-Perform'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 w-10 h-10 bg-amber-500 text-navy-950 rounded-lg flex items-center justify-center text-lg font-bold shadow-md">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-800 font-heading mb-2">Trade & Self-Perform</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Direct execution in concrete, carpentry, and masonry to maintain strict quality standard enforcement and schedule pacing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceModal('Trade Contracting', 'By maintaining our own skilled trade professionals, Ruscilli controls quality at the source and provides benchmark setting speed.')" class="text-amber-600 hover:text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">
+                            <span>Learn Details</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Featured Projects / Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded border border-amber-200">Featured Work</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 font-heading mt-2">
+                        Architectural Landmarks & Infrastructure
+                    </h2>
+                </div>
+
+                <!-- Portfolio Filters -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterPortfolio('all')" class="filter-btn active bg-navy-800 text-white px-4 py-2 rounded-md transition" data-filter="all">All</button>
+                    <button onclick="filterPortfolio('healthcare')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition" data-filter="healthcare">Healthcare</button>
+                    <button onclick="filterPortfolio('education')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition" data-filter="education">Higher Ed</button>
+                    <button onclick="filterPortfolio('commercial')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition" data-filter="commercial">Commercial</button>
+                    <button onclick="filterPortfolio('industrial')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition" data-filter="industrial">Industrial</button>
+                    <button onclick="filterPortfolio('civic')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md transition" data-filter="civic">Civic & Culture</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Project 1: Healthcare -->
+                <div class="project-card healthcare group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="healthcare">
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop" 
+                         alt="Regional Healthcare Pavilion" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Healthcare+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Healthcare</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Columbus, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Regional Medical Surgical Tower</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">240,000 sq. ft. state-of-the-art acute care center constructed with zero operational downtime for adjacent facilities.</p>
+                        <button onclick="openProjectModal('Regional Medical Surgical Tower', 'Healthcare', 'Columbus, OH', '240,000 SF', 'Construction Management', 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Higher Education -->
+                <div class="project-card education group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="education">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop" 
+                         alt="University STEM Science Center" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Education+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Higher Education</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> University Campus, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Interdisciplinary Science & Tech Lab</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">High-performance research laboratory featuring cleanrooms, collaboration commons, and LEED Gold certification standards.</p>
+                        <button onclick="openProjectModal('Interdisciplinary Science & Tech Lab', 'Higher Education', 'University Campus, OH', '180,000 SF', 'Design-Build', 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Commercial -->
+                <div class="project-card commercial group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" 
+                         alt="Corporate Headquarters Tower" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Commercial+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Commercial</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Downtown Metro, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Innovation Corporate HQ Tower</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">12-story modern glass façade commercial office complex with subterranean parking and custom executive suites.</p>
+                        <button onclick="openProjectModal('Innovation Corporate HQ Tower', 'Commercial', 'Downtown Metro, OH', '310,000 SF', 'General Contracting', 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Industrial -->
+                <div class="project-card industrial group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="industrial">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" 
+                         alt="Advanced Manufacturing Logistics Facility" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Industrial+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Industrial</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Central Industrial Park, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Automated Distribution Hub</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">500,000 sq. ft. high-bay industrial facility engineered for high-density logistics and rapid turnaround times.</p>
+                        <button onclick="openProjectModal('Automated Distribution Hub', 'Industrial', 'Central Industrial Park, OH', '500,000 SF', 'Construction Management', 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Civic & Culture -->
+                <div class="project-card civic group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="civic">
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop" 
+                         alt="Metropolitan Performing Arts Center" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Civic+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Civic & Culture</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Metropolitan District, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Civic Performance & Cultural Center</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">Acoustically superior multi-theater complex featuring expansive civic plazas and sustainable timber accents.</p>
+                        <button onclick="openProjectModal('Civic Performance & Cultural Center', 'Civic & Culture', 'Metropolitan District, OH', '145,000 SF', 'Design-Build', 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6: Hospitality -->
+                <div class="project-card commercial group relative bg-navy-950 rounded-xl overflow-hidden shadow-lg h-[420px]" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop" 
+                         alt="Luxury Hotel and Conference Center" 
+                         class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/600x800/0f2b48/ffffff?text=Hospitality+Project'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase px-3 py-1 rounded tracking-wider">Commercial</span>
+                    </div>
+
+                    <div class="absolute bottom-0 p-6 w-full space-y-2">
+                        <span class="text-xs text-slate-300 font-medium"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Riverfront District, OH</span>
+                        <h3 class="text-xl font-bold text-white font-heading">Grand Riverfront Hotel & Resort</h3>
+                        <p class="text-xs text-slate-300 line-clamp-2">280-room premier hotel complex including grand ballrooms, rooftop amenities, and custom curtain-wall glass work.</p>
+                        <button onclick="openProjectModal('Grand Riverfront Hotel & Resort', 'Commercial', 'Riverfront District, OH', '290,000 SF', 'CM at-Risk', 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop')" class="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pt-2 hover:underline">
+                            <span>View Case Study</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Markets & Industries Section -->
+    <section id="markets" class="py-24 bg-navy-950 text-white blueprint-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest bg-white/10 px-3 py-1 rounded border border-white/10">Industry Breadth</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading mt-3">
+                    Markets We Build For
+                </h2>
+                <p class="text-slate-300 mt-3 text-base">
+                    Specialized domain expertise tailored to the unique regulatory, technical, and operational demands of diverse industries.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Market 1 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" 
+                         alt="Healthcare Construction" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Healthcare</h4>
+                        <span class="text-xs text-slate-300 mt-1">Hospitals, Surgical Centers & Urgent Care</span>
+                    </div>
+                </div>
+
+                <!-- Market 2 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" 
+                         alt="Higher Education Construction" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Higher Education</h4>
+                        <span class="text-xs text-slate-300 mt-1">Universities, Auditoriums & Labs</span>
+                    </div>
+                </div>
+
+                <!-- Market 3 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=600&auto=format&fit=crop" 
+                         alt="K-12 Education Building" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">K-12 Education</h4>
+                        <span class="text-xs text-slate-300 mt-1">Public & Private School Campuses</span>
+                    </div>
+                </div>
+
+                <!-- Market 4 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" 
+                         alt="Office & Commercial Architecture" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Office & Commercial</h4>
+                        <span class="text-xs text-slate-300 mt-1">Corporate HQs, Tech & Retail</span>
+                    </div>
+                </div>
+
+                <!-- Market 5 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop" 
+                         alt="Industrial Facilities" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Industrial & Mfg</h4>
+                        <span class="text-xs text-slate-300 mt-1">Manufacturing Plants & Logistics</span>
+                    </div>
+                </div>
+
+                <!-- Market 6 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop" 
+                         alt="Hospitality Architecture" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Hospitality</h4>
+                        <span class="text-xs text-slate-300 mt-1">Hotels, Resorts & Venues</span>
+                    </div>
+                </div>
+
+                <!-- Market 7 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=600&auto=format&fit=crop" 
+                         alt="Government Municipal Buildings" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Government</h4>
+                        <span class="text-xs text-slate-300 mt-1">Civic Facilities & Public Services</span>
+                    </div>
+                </div>
+
+                <!-- Market 8 -->
+                <div class="relative h-64 rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=600&auto=format&fit=crop" 
+                         alt="Tech & Life Sciences Cleanrooms" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70 group-hover:opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-2 border border-amber-500/30">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-white font-heading">Tech & Laboratory</h4>
+                        <span class="text-xs text-slate-300 mt-1">Cleanrooms & Life Sciences</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Ruscilli -->
+    <section id="why-ruscilli" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded">The Ruscilli Difference</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 font-heading">
+                        Why Regional Leaders Choose Ruscilli
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Our clients return project after project because we blend the resources of a major builder with the personal accountability of employee-owners.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 flex items-center justify-center shrink-0 font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-base font-heading">ESOP Ownership Culture</h4>
+                                <p class="text-xs text-slate-600 mt-1">Every superintendent, engineer, and project executive is an owner invested in your project's absolute outcome.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 flex items-center justify-center shrink-0 font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-base font-heading">Award-Winning Safety Program</h4>
+                                <p class="text-xs text-slate-600 mt-1">Consistent industry-leading EMR safety scores ensuring safe, secure job sites for every trade partner.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 flex items-center justify-center shrink-0 font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-base font-heading">Predictable Budget Delivery</h4>
+                                <p class="text-xs text-slate-600 mt-1">Over 98% of our projects complete within target budget constraints through rigorous preconstruction planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="text-amber-500 flex gap-1">
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                            </div>
+                            <p class="text-slate-600 text-xs italic leading-relaxed">
+                                "Ruscilli's preconstruction accuracy was astonishing. They identified supply chain issues six months early and saved our hospital system over $1.2M in material costs."
+                            </p>
+                            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-bold text-xs text-navy-800 font-heading">David M.</h5>
+                                    <span class="text-[10px] text-slate-400">VP of Facilities, Health System</span>
+                                </div>
+                                <i class="fa-solid fa-quote-right text-slate-200 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="text-amber-500 flex gap-1">
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                            </div>
+                            <p class="text-slate-600 text-xs italic leading-relaxed">
+                                "Because Ruscilli is employee-owned, their job site superintendents treat your building like it is their own personal property. Unmatched quality."
+                            </p>
+                            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-bold text-xs text-navy-800 font-heading">Sarah L.</h5>
+                                    <span class="text-[10px] text-slate-400">University Director of Planning</span>
+                                </div>
+                                <i class="fa-solid fa-quote-right text-slate-200 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3 sm:col-span-2">
+                            <div class="text-amber-500 flex gap-1">
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                            </div>
+                            <p class="text-slate-600 text-xs italic leading-relaxed">
+                                "The level of communication and BIM technology they brought to our mixed-use development set a new benchmark for our corporate firm. We won't build with anyone else."
+                            </p>
+                            <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-bold text-xs text-navy-800 font-heading">Robert K.</h5>
+                                    <span class="text-[10px] text-slate-400">Managing Partner, Commercial Development</span>
+                                </div>
+                                <i class="fa-solid fa-quote-right text-slate-200 text-xl"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Project Proposal Intake Tool -->
+    <section id="proposal-builder" class="py-24 bg-navy-900 text-white blueprint-bg border-t border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">Interactive Proposal Tool</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading mt-3">
+                    Start Your Project Intake
+                </h2>
+                <p class="text-slate-300 mt-2 text-sm">
+                    Configure your project parameters below to receive a custom project consultation and preliminary proposal outline from Ruscilli's preconstruction specialists.
+                </p>
+            </div>
+
+            <!-- Wizard Card -->
+            <div class="bg-navy-950/80 rounded-2xl border border-white/10 p-6 sm:p-10 shadow-2xl backdrop-blur-md max-w-5xl mx-auto">
+                
+                <!-- Progress Indicators -->
+                <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
+                    <div class="flex items-center gap-2 step-indicator active" id="step-ind-1">
+                        <span class="w-8 h-8 rounded-full bg-amber-500 text-navy-950 font-bold text-xs flex items-center justify-center">1</span>
+                        <span class="text-xs font-semibold text-white hidden sm:inline">Project Sector</span>
+                    </div>
+                    <div class="h-0.5 flex-1 bg-white/10 mx-4"></div>
+                    <div class="flex items-center gap-2 step-indicator opacity-50" id="step-ind-2">
+                        <span class="w-8 h-8 rounded-full bg-white/10 text-white font-bold text-xs flex items-center justify-center">2</span>
+                        <span class="text-xs font-semibold text-white hidden sm:inline">Service & Scale</span>
+                    </div>
+                    <div class="h-0.5 flex-1 bg-white/10 mx-4"></div>
+                    <div class="flex items-center gap-2 step-indicator opacity-50" id="step-ind-3">
+                        <span class="w-8 h-8 rounded-full bg-white/10 text-white font-bold text-xs flex items-center justify-center">3</span>
+                        <span class="text-xs font-semibold text-white hidden sm:inline">Details & Contact</span>
+                    </div>
+                </div>
+
+                <!-- Wizard Form -->
+                <form id="intake-form" onsubmit="event.preventDefault(); submitProposal();" class="space-y-8">
+                    
+                    <!-- STEP 1: Sector Selection -->
+                    <div id="wizard-step-1" class="wizard-step">
+                        <h3 class="text-lg font-bold text-white font-heading mb-4">Select Your Primary Project Type</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            
+                            <label class="cursor-pointer">
+                                <input type="radio" name="project_type" value="Commercial" class="peer hidden" checked onchange="updateSummary()">
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 text-center hover:bg-white/10 transition">
+                                    <i class="fa-solid fa-briefcase text-2xl text-amber-400 mb-2 block"></i>
+                                    <span class="text-xs font-semibold text-white block">Commercial / Office</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="project_type" value="Healthcare" class="peer hidden" onchange="updateSummary()">
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 text-center hover:bg-white/10 transition">
+                                    <i class="fa-solid fa-hospital text-2xl text-amber-400 mb-2 block"></i>
+                                    <span class="text-xs font-semibold text-white block">Healthcare System</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="project_type" value="Higher Education" class="peer hidden" onchange="updateSummary()">
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 text-center hover:bg-white/10 transition">
+                                    <i class="fa-solid fa-graduation-cap text-2xl text-amber-400 mb-2 block"></i>
+                                    <span class="text-xs font-semibold text-white block">Higher Education</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="project_type" value="Industrial" class="peer hidden" onchange="updateSummary()">
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 text-center hover:bg-white/10 transition">
+                                    <i class="fa-solid fa-industry text-2xl text-amber-400 mb-2 block"></i>
+                                    <span class="text-xs font-semibold text-white block">Industrial & Mfg</span>
+                                </div>
+                            </label>
+
+                        </div>
+
+                        <div class="flex justify-end mt-8">
+                            <button type="button" onclick="goToStep(2)" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-6 py-3 rounded-md text-xs uppercase tracking-wider transition flex items-center gap-2">
+                                <span>Continue to Delivery Method</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Delivery Method & Budget -->
+                    <div id="wizard-step-2" class="wizard-step hidden">
+                        <h3 class="text-lg font-bold text-white font-heading mb-4">Required Service & Estimated Scope</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Delivery Method</label>
+                                <select id="service_needed" onchange="updateSummary()" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                                    <option value="Preconstruction & Budgeting">Preconstruction & Feasibility</option>
+                                    <option value="Construction Management">Construction Management at-Risk</option>
+                                    <option value="Design-Build">Design-Build Execution</option>
+                                    <option value="General Contracting">General Contracting</option>
+                                    <option value="Special Projects / Renovation">Special Projects / Renovation</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Estimated Budget Range</label>
+                                <select id="budget_range" onchange="updateSummary()" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                                    <option value="$1M - $5M">$1M - $5M</option>
+                                    <option value="$5M - $15M">$5M - $15M</option>
+                                    <option value="$15M - $50M">$15M - $50M</option>
+                                    <option value="$50M+">$50M+ Commercial Landmark</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between mt-8">
+                            <button type="button" onclick="goToStep(1)" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-md text-xs uppercase tracking-wider transition">
+                                Back
+                            </button>
+                            <button type="button" onclick="goToStep(3)" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-6 py-3 rounded-md text-xs uppercase tracking-wider transition flex items-center gap-2">
+                                <span>Continue to Details</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Contact & Notes -->
+                    <div id="wizard-step-3" class="wizard-step hidden">
+                        <h3 class="text-lg font-bold text-white font-heading mb-4">Contact Information & Summary</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-1">Full Name *</label>
+                                <input type="text" id="contact_name" required placeholder="e.g. Eleanor Vance" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-1">Company / Organization *</label>
+                                <input type="text" id="contact_company" required placeholder="e.g. Apex Health Systems" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-1">Email Address *</label>
+                                <input type="email" id="contact_email" required placeholder="name@company.com" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-slate-300 font-semibold mb-1">Phone Number *</label>
+                                <input type="tel" id="contact_phone" required placeholder="(614) 555-0199" class="w-full bg-navy-900 border border-white/15 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+
+                        <!-- Summary Display Box -->
+                        <div class="bg-navy-900 p-4 rounded-xl border border-amber-500/30 text-xs text-slate-300 space-y-1 mb-6">
+                            <div class="font-bold text-amber-400 uppercase tracking-wider">Intake Selection Overview:</div>
+                            <div><strong class="text-white">Sector:</strong> <span id="summary-sector">Commercial</span></div>
+                            <div><strong class="text-white">Service:</strong> <span id="summary-service">Preconstruction & Budgeting</span></div>
+                            <div><strong class="text-white">Estimated Budget:</strong> <span id="summary-budget">$1M - $5M</span></div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <button type="button" onclick="goToStep(2)" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-md text-xs uppercase tracking-wider transition">
+                                Back
+                            </button>
+                            <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-extrabold px-8 py-3 rounded-md text-xs uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Request</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded border border-amber-200">Connect With Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 font-heading">
+                        Headquarters & Direct Contact
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Whether you are planning a groundbreaking enterprise campus or an urgent interior renovation, our executive builders are ready to talk.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-navy-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Headquarters</h4>
+                                <p class="text-xs text-slate-600 mt-1">2045 Apsley Road, Columbus, OH 43229</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-navy-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Phone Inquiry</h4>
+                                <p class="text-xs text-slate-600 mt-1">(614) 888-6100</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-navy-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm font-heading">Proposal Email</h4>
+                                <p class="text-xs text-slate-600 mt-1">proposals@ruscilli.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stylized Interactive Map Mockup -->
+                <div class="lg:col-span-7">
+                    <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Columbus Area Map View" 
+                             class="w-full h-full object-cover opacity-60 filter grayscale hover:grayscale-0 transition duration-700"
+                             onerror="this.src='https://placehold.co/1000x600/0f2b48/ffffff?text=Columbus+HQ+Location'">
+                        
+                        <!-- Map Pin Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative flex flex-col items-center">
+                                <div class="bg-navy-800 text-white text-xs font-bold px-4 py-2 rounded-lg shadow-xl border border-amber-500 mb-2 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                                    <span>Ruscilli HQ • Columbus, OH</span>
+                                </div>
+                                <i class="fa-solid fa-location-pin text-amber-500 text-4xl drop-shadow-md"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-navy-950 text-white border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-white/10">
+                
+                <!-- Col 1: Logo & Statement -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-amber-500 rounded flex items-center justify-center font-black text-navy-950 text-lg">
+                            R
+                        </div>
+                        <span class="font-extrabold text-xl tracking-wider text-white uppercase font-heading">
+                            RUSCILLI
+                        </span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        Ruscilli Construction Co. is a family and employee-owned full-service commercial builder providing preconstruction, construction management, and design-build services since 1945.
+                    </p>
+                    <div class="flex gap-3 text-slate-400">
+                        <a href="#" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-amber-500 hover:text-navy-950 transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-amber-500 hover:text-navy-950 transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-amber-500 hover:text-navy-950 transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4 font-heading">Navigation</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#about" class="hover:text-amber-400 transition">About Ruscilli</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Our Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-amber-400 transition">Project Gallery</a></li>
+                        <li><a href="#markets" class="hover:text-amber-400 transition">Markets Served</a></li>
+                        <li><a href="#proposal-builder" class="hover:text-amber-400 transition">Proposal Intake</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4 font-heading">Services</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#services" class="hover:text-amber-400 transition">Preconstruction</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Construction Management</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Design-Build</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">General Contracting</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Special Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Brief -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4 font-heading">Headquarters</h4>
+                    <address class="not-italic text-xs text-slate-300 space-y-1">
+                        <p>2045 Apsley Road</p>
+                        <p>Columbus, OH 43229</p>
+                        <p class="pt-2"><i class="fa-solid fa-phone text-amber-400 mr-1"></i> (614) 888-6100</p>
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Ruscilli Construction Co. All Rights Reserved. An Equal Opportunity & ESOP Employer.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-300">Safety Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modal Dialog -->
+    <div id="service-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-200">
+            <button onclick="closeServiceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-navy-800 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-building text-2xl"></i>
+            </div>
+            <h3 id="modal-service-title" class="text-xl font-bold text-navy-800 font-heading mb-3">Service Details</h3>
+            <p id="modal-service-desc" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
+            <div class="flex justify-end">
+                <a href="#proposal-builder" onclick="closeServiceModal()" class="bg-navy-800 hover:bg-navy-900 text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-md transition">
+                    Request Service Proposal
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal Dialog -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative border border-slate-200">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-10 text-white bg-navy-950/60 w-8 h-8 rounded-full flex items-center justify-center hover:bg-navy-950 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="h-64 relative">
+                <img id="modal-proj-img" src="" alt="Project Visual" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-6 right-6 text-white">
+                    <span id="modal-proj-category" class="text-[10px] font-bold uppercase tracking-widest bg-amber-500 text-navy-950 px-2 py-0.5 rounded">Category</span>
+                    <h3 id="modal-proj-title" class="text-2xl font-bold font-heading mt-1">Project Title</h3>
+                </div>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="grid grid-cols-3 gap-4 text-center bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs">
+                    <div>
+                        <span class="text-slate-400 block text-[10px] uppercase">Location</span>
+                        <strong id="modal-proj-location" class="text-navy-800">Columbus, OH</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px] uppercase">Project Scale</span>
+                        <strong id="modal-proj-scale" class="text-navy-800">200,000 SF</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px] uppercase">Delivery</span>
+                        <strong id="modal-proj-delivery" class="text-navy-800">CM at-Risk</strong>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                    This project exemplifies Ruscilli Construction's dedication to architectural precision, schedule compliance, and proactive trade coordination. Delivered on budget with zero safety incidents.
+                </p>
+                <div class="flex justify-end pt-2">
+                    <button onclick="closeProjectModal()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submission Confirmation Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 text-center shadow-2xl relative">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-navy-800 font-heading mb-2">Proposal Request Received</h3>
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                Thank you for submitting your project parameters. A Senior Preconstruction Director from Ruscilli will review your specifications and reach out within 24 business hours.
+            </p>
+            <button onclick="closeSuccessModal()" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md transition w-full">
+                Return to Site
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Counter Animation using IntersectionObserver
+        const counters = document.querySelectorAll('.counter');
+        let counterAnimated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterAnimated) {
+                    counterAnimated = true;
+                    counters.forEach(counter => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const isDecimal = target % 1 !== 0;
+                        let count = 0;
+                        const increment = target / 50;
+
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                counter.innerText = isDecimal ? count.toFixed(1) : Math.ceil(count);
+                                setTimeout(updateCount, 30);
+                            } else {
+                                counter.innerText = isDecimal ? target.toFixed(1) : target;
+                            }
+                        };
+                        updateCount();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+
+        // Portfolio Filtering Logic
+        function filterPortfolio(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-navy-800', 'text-white');
+                    btn.classList.remove('bg-slate-100', 'text-slate-700');
+                } else {
+                    btn.classList.remove('bg-navy-800', 'text-white');
+                    btn.classList.add('bg-slate-100', 'text-slate-700');
+                }
+            });
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Interactive Proposal Intake Wizard Logic
+        function goToStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.wizard-step').forEach(step => step.classList.add('hidden'));
+            
+            // Show requested step
+            document.getElementById(`wizard-step-${stepNumber}`).classList.remove('hidden');
+
+            // Update progress indicator styling
+            for (let i = 1; i <= 3; i++) {
+                const ind = document.getElementById(`step-ind-${i}`);
+                if (i <= stepNumber) {
+                    ind.classList.remove('opacity-50');
+                    ind.querySelector('span').classList.replace('bg-white/10', 'bg-amber-500');
+                    ind.querySelector('span').classList.replace('text-white', 'text-navy-950');
+                } else {
+                    ind.classList.add('opacity-50');
+                    ind.querySelector('span').classList.replace('bg-amber-500', 'bg-white/10');
+                    ind.querySelector('span').classList.replace('text-navy-950', 'text-white');
+                }
+            }
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const selectedSector = document.querySelector('input[name="project_type"]:checked')?.value || 'Commercial';
+            const selectedService = document.getElementById('service_needed')?.value || 'Preconstruction';
+            const selectedBudget = document.getElementById('budget_range')?.value || '$1M - $5M';
+
+            document.getElementById('summary-sector').textContent = selectedSector;
+            document.getElementById('summary-service').textContent = selectedService;
+            document.getElementById('summary-budget').textContent = selectedBudget;
+        }
+
+        function submitProposal() {
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            goToStep(1);
+            document.getElementById('intake-form').reset();
+        }
+
+        // Service Modal Handlers
+        function openServiceModal(title, desc) {
+            document.getElementById('modal-service-title').textContent = title;
+            document.getElementById('modal-service-desc').textContent = desc;
+            document.getElementById('service-modal').classList.remove('hidden');
+        }
+
+        function closeServiceModal() {
+            document.getElementById('service-modal').classList.add('hidden');
+        }
+
+        // Project Modal Handlers
+        function openProjectModal(title, category, location, scale, delivery, imgUrl) {
+            document.getElementById('modal-proj-title').textContent = title;
+            document.getElementById('modal-proj-category').textContent = category;
+            document.getElementById('modal-proj-location').textContent = location;
+            document.getElementById('modal-proj-scale').textContent = scale;
+            document.getElementById('modal-proj-delivery').textContent = delivery;
+            document.getElementById('modal-proj-img').src = imgUrl;
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
